@@ -50,11 +50,6 @@ $faqs = [
     ],
 ];
 
-    foreach ($faqs as $faq) {
-        $domanda = $faq['domanda'];
-        $risposta = $faq['risposta'];
-        var_dump($domanda);
-    }
 
 // Ci sono diverse domande con relative risposte. Gestire il “Database” e la visualizzazione di queste domande e risposte con PHP.
 ?>
@@ -68,10 +63,12 @@ $faqs = [
     <title>Document</title>
 </head>
 <body>
-
-    <h2><?php echo $domanda; ?></h2>
-    <p><?php echo $risposta; ?></p>
-
+    <?php
+    foreach ($faqs as $faq) {
+        echo '<h2>' . $faq['domanda'] . '</h2>';
+        echo '<p>' . $faq['risposta'] . '</p>';
+    }
+    ?>
 </body>
 </html>
 
